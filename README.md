@@ -4,6 +4,8 @@
 
 > This is an official implementation of [TriGAN-SiaMT: A triple-segmentor adversarial network with bounding box priors for semi-supervised brain lesion segmentation](https://www.sciencedirect.com/science/article/abs/pii/S0167865525003861?dgcid=coauthor) <br>
 
+**Release date:** 14/Dec/2025
+
 ## Abstract
 Accurate brain lesion segmentation from MRI is essential for clinical decision-making, yet dense pixel-wise annotations are expensive and limited. We propose TriGAN-SiaMT, a semi-supervised segmentation framework that integrates adversarial learning, multi-level consistency regularization, and bounding box priors. The model employs three segmentors with supervised, Siamese, and EMA-based teacher pathways to effectively leverage both labeled and unlabeled data. Experiments on ISLES 2022 and BraTS 2019 demonstrate strong performance and robustness under limited supervision.
 
