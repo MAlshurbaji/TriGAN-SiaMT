@@ -12,7 +12,7 @@ Accurate brain lesion segmentation from MRI is essential for clinical decision-m
 ## Usage
 
 ### Installation
-The framework was tested using Python 3.10, PyTorch 2.6, and CUDA 12.4.
+The framework was tested using Python 3.10, PyTorch 2.6, and CUDA 12.4. Ensure that you install all the dependencies listed in `requirements.txt`.
 
 ```
 conda create -n trigan_siamt python=3.10
@@ -29,7 +29,7 @@ After placing the downloaded 3D volumes in `data/DATASET/3d_data/`, generate 2D 
 python make_dataset.py
 ```
 
-Bounding box annotations are generated with:
+Then, bounding boxes are generated using:
 ```bash
 python generate_bbox.py
 ```
@@ -37,13 +37,14 @@ python generate_bbox.py
 ```
 data/
 ├─ isles22/
-│  ├─ 3d_data/
-│  ├─ images/
-│  │  ├─ dwi/
+│  ├─ 3d_data/ISLES-2022/
+│  │  └─ ...
+│  ├─ 2d_data/
+│  │  ├─ images/
 │  │  │  ├─ train/
 │  │  │  ├─ val/
 │  │  │  └─ test/
-│  │  └─ label/
+│  │  └─ labels/
 │  │     ├─ train/
 │  │     ├─ val/
 │  │     └─ test/
@@ -56,10 +57,16 @@ data/
 │     ├─ bbox_val.json
 │     └─ bbox_test.json
 ├─ brats19/
-│  └─ ...
+│  ├─ 3d_data/MICCAI_BraTS_2019_Data_Training/
+│  │  └─ ...
+│  ├─ 2d_data/
+│  │  └─ ...
+│  └─ bboxes/
+│     └─ ...
 ```
 
 ### Training & Evaluation
+After setting `labeled_ratio` and other parameters in `config.yaml`, run the following command to train and evaluate the model:
 ```
 python train.py
 python evaluate.py
