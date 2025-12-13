@@ -1,39 +1,37 @@
 # TriGAN-SiaMT: A Triple-Segmentor Adversarial Network with Bounding Box Priors for Semi-Supervised Brain Lesion Segmentation
 
-This is an official implementation of [TriGAN-SiaMT: A triple-segmentor adversarial network with bounding box priors for semi-supervised brain lesion segmentation](https://www.sciencedirect.com/science/article/abs/pii/S0167865525003861?dgcid=coauthor) <br>
-
 ![Framework](figures/framework.png)
 
+> This is an official implementation of [TriGAN-SiaMT: A triple-segmentor adversarial network with bounding box priors for semi-supervised brain lesion segmentation](https://www.sciencedirect.com/science/article/abs/pii/S0167865525003861?dgcid=coauthor) <br>
+
 ## Abstract
-Accurate brain lesion segmentation from MRI is essential for clinical decision-making, yet dense pixel-wise annotations are expensive and limited. We propose **TriGAN-SiaMT**, a semi-supervised segmentation framework that integrates adversarial learning, multi-level consistency regularization, and bounding box priors. The model employs three segmentors with supervised, Siamese, and EMA-based teacher pathways to effectively leverage both labeled and unlabeled data. Experiments on **ISLES 2022** and **BraTS 2019** demonstrate strong performance and robustness under limited supervision.
+Accurate brain lesion segmentation from MRI is essential for clinical decision-making, yet dense pixel-wise annotations are expensive and limited. We propose TriGAN-SiaMT, a semi-supervised segmentation framework that integrates adversarial learning, multi-level consistency regularization, and bounding box priors. The model employs three segmentors with supervised, Siamese, and EMA-based teacher pathways to effectively leverage both labeled and unlabeled data. Experiments on ISLES 2022 and BraTS 2019 demonstrate strong performance and robustness under limited supervision.
 
+## Usage
 
-## Requirements
-The code has been tested with:
+### Installation
+The framework was tested using Python 3.10, PyTorch 2.6, and CUDA 12.4.
 
-- Python **3.10**
-- PyTorch **2.8**
-- CUDA **12.6**
-
-Install all dependencies using:
-
-```bash
+```
+conda create -n trigan_siamt python=3.10
+conda activate trigan_siamt
+cd TriGAN-SiaMT
 pip install -r requirements.txt
 ```
 
-## Datasets
-
+### Datasets
 ISLES-2022 dataset can be downloaded from [Kaggle](https://www.kaggle.com/datasets/orvile/isles-2022-brain-stoke-dataset), and BraTS-2019 dataset from [Kaggle](https://www.kaggle.com/datasets/aryashah2k/brain-tumor-segmentation-brats-2019/data). <br>
 
-Once the downloaded 3D volumes are placed in `data/DATASET/3d_data/`, the datasets can be processed into 2D slices and split into training, validation, and testing sets using:
+After placing the downloaded 3D volumes in `data/DATASET/3d_data/`, generate 2D slices and patient-wise train/val/test splits using:
 ```bash
 python make_dataset.py
 ```
 
-Bounding box annotations are then generated using:
+Bounding box annotations are generated with:
 ```bash
 python generate_bbox.py
 ```
+
 ```
 data/
 ├─ isles22/
@@ -56,22 +54,16 @@ data/
 │     ├─ bbox_val.json
 │     └─ bbox_test.json
 ├─ brats19/
-│  ├─ 3d_data/
 │  └─ ...
 ```
 
----
-
-## Usage
+### Training & Evaluation
 ```
-cd TriGAN-SiaMT
-pip install -r requirements.txt
 python train.py
 python evaluate.py
 ```
 
 ## Citation
-
 If you find this work useful, please consider citing:
 
 ```bibtex
@@ -88,12 +80,6 @@ If you find this work useful, please consider citing:
 }
 ```
 
-
-
 ## Acknowledgements
-
-Parts of this implementation build upon components from [SSL4MIS] 
-(https://github.com/HiLab-git/SSL4MIS) <br>. We thank the authors for making their work publicly available.
-
-
+Parts of this implementation build upon components from [SSL4MIS](https://github.com/HiLab-git/SSL4MIS). We thank the authors for making their work publicly available.
 
