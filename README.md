@@ -66,7 +66,7 @@ data/
 ```
 
 ### Training & Evaluation
-After setting `labeled_ratio` and other parameters in `config.yaml`, run the following command to train and evaluate the model:
+After setting `labeled_ratio` and other parameters in `config/config_train.yaml`, run the following command to train and evaluate the model:
 ```
 python train.py
 python evaluate.py
