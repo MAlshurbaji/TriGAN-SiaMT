@@ -1,0 +1,20 @@
+ brats19/
+ ├─ 3d_data/MICCAI_BraTS_2019_Data_Training/
+ │  └─ ...
+ ├─ 2d_data/
+ │  ├─ images/
+ │  │  ├─ train/
+ │  │  ├─ val/
+ │  │  └─ test/
+ │  └─ labels/
+ │     ├─ train/
+ │     ├─ val/
+ │     └─ test/
+ └─ bboxes/
+    ├─ mask_bbox/
+    │  ├─ train/
+    │  ├─ val/
+    │  └─ test/
+    ├─ bbox_train.json
+    ├─ bbox_val.json
+    └─ bbox_test.json

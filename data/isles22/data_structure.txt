@@ -1,0 +1,20 @@
+ isles22/
+ ├─ 3d_data/ISLES-2022/
+ │  └─ ...
+ ├─ 2d_data/
+ │  ├─ images/
+ │  │  ├─ train/
+ │  │  ├─ val/
+ │  │  └─ test/
+ │  └─ labels/
+ │     ├─ train/
+ │     ├─ val/
+ │     └─ test/
+ └─ bboxes/
+    ├─ mask_bbox/
+    │  ├─ train/
+    │  ├─ val/
+    │  └─ test/
+    ├─ bbox_train.json
+    ├─ bbox_val.json
+    └─ bbox_test.json
