@@ -381,7 +381,7 @@ def save_pred_masks_png(epoch_pred_masks: Dict[str, np.ndarray], out_dir: str) -
 # MAIN
 # ============================================================
 def main():
-    cfg = load_yaml_config("config_train.yaml")
+    cfg = load_yaml_config("config/config_train.yaml")
 
     ensure_one_mode(cfg["model"]["with_bbox"])
 
