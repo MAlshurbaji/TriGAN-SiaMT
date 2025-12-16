@@ -2,7 +2,8 @@
 
 ![Framework](figures/framework.png)
 
-> This is an official implementation of [TriGAN-SiaMT: A triple-segmentor adversarial network with bounding box priors for semi-supervised brain lesion segmentation](https://www.sciencedirect.com/science/article/abs/pii/S0167865525003861?dgcid=coauthor) <br>
+> This is an official implementation of [TriGAN-SiaMT: A triple-segmentor adversarial network with bounding box priors for semi-supervised brain lesion segmentation](https://www.sciencedirect.com/science/article/abs/pii/S0167865525003861?dgcid=coauthor)
+> 
 > A brief demo video of the framework is available on [YouTube](https://youtu.be/EUI6ZappxkQ)
 
 **Release date:** 14/Dec/2025
